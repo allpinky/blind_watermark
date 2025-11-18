@@ -1,0 +1,83 @@
+Tôi muốn tạo một website có bố cục chuyên nghiệp như một nền tảng AI nội bộ dành cho công ty game. Giao diện hiện đại, chia rõ các module, có đăng nhập và khám phá AI. Tên nền tảng là **AIverse**.
+
+---
+
+🟩 PHẦN 1 – MÀN HÌNH GIỚI THIỆU (TRƯỚC ĐĂNG NHẬP)
+
+- Đây là landing page đầu tiên (public), ai cũng thấy
+- Giao diện gọn, đẹp, mô tả AIverse:
+
+  - Tiêu đề chính: “AIverse – Trợ Lý AI Toàn Diện Cho Studio Game”
+  - Đoạn mô tả:
+    > AIverse là hệ thống tập hợp các trợ lý AI phục vụ từng phòng ban trong studio game: nội dung, thiết kế, QA, voice, dịch thuật...
+  - Danh sách tính năng (có icon):
+    - 🤖 Tìm AI theo lĩnh vực
+    - 🎨 Sinh ảnh & giao diện
+    - 🧙 Viết NPC và lore
+    - 🎧 Tạo voice nhân vật
+    - 📊 Phân tích & đề xuất AI
+  - Nút: **“Đăng nhập để bắt đầu”** → dẫn đến trang đăng nhập
+
+---
+
+🔐 PHẦN 2 – TRANG ĐĂNG NHẬP
+
+- Giao diện đơn giản:
+  - Input username
+  - Input password
+  - Nút đăng nhập
+
+- Xác thực cứng:
+  - Username: `a`
+  - Password: `b`
+
+- Nếu đúng → chuyển đến dashboard chính  
+- Nếu sai → hiện lỗi “Sai tài khoản hoặc mật khẩu”, không reload
+
+---
+
+📂 PHẦN 3 – DASHBOARD CHÍNH SAU ĐĂNG NHẬP
+
+- Giữ giao diện gốc hiện tại, thêm **sidebar luôn hiển thị bên trái**
+
+### Sidebar gồm:
+- Logo AIverse (chữ)
+- Menu:
+  - Trang chủ
+  - Tạo Prompt AI
+  - Tạo Giọng Nói
+  - Danh sách Công cụ
+  - ⭐ **Pinky Model** (Xem các AI như Hugging Face)
+  - Đăng xuất
+
+---
+
+🏠 PHẦN 4 – TRANG CHỦ (SAU KHI LOGIN)
+
+- Hiển thị:
+  - “Chào mừng đến với AIverse – Trợ lý AI đa nhiệm cho công ty game”
+  - Gợi ý nhanh các tính năng chính: Prompt Generator, Pinky Model, Voice AI...
+  - Có thể có các quick-card điều hướng
+  - Giao diện đồng bộ với thiết kế hiện tại (bạn đã có)
+
+---
+
+🧠 PHẦN 5 – “PINKY MODEL” (NHƯ HUGGING FACE MINI)
+
+- Giao diện riêng khi click vào menu “Pinky Model”
+- Gồm:
+  - Thanh tìm kiếm model (tìm theo tên hoặc từ khóa)
+  - Dropdown chọn pipeline_tag:
+    - text-generation
+    - text-to-speech
+    - image-to-image
+    - text-classification
+    - translation
+  - Dropdown chọn sort:
+    - Mới nhất
+    - Tải nhiều
+    - Được thích
+
+- Gọi API:
+```js
+https://huggingface.co/api/models?search=<query>&pipeline_tag=<tag>&sort=<sort>
